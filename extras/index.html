@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!-- //here im going to learn about fetch method in js to retrive data from
+        any specific http req. -->
+    </head>
+    <body>
+        <script>
+            async function fetchData() {
+                const response = await fetch(
+                    "https://fakerapi.it/api/v1/persons"
+                );
+                const data = await response.json();
+                console.log(data); // to see the data in console.
+                document.getElementById("data").innerHTML =
+                    JSON.stringify(data);
+            }
+        </script>
+        <button onclick="fetchData()">Fetch Data</button>
+        <div id="data"></div>
+    </body>
+</html>
