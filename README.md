@@ -8,9 +8,7 @@
 
 Write the following commands on your terminal to clone this repository, so that you can run this project locally.
 
-```bash
-git clone https://github.com/Bharat2044/100xDevs-Cohort3-WebDev-and-Devops.git
-```
+
 
 ## 👨‍💻 **Contents** 👀
 
@@ -29,7 +27,7 @@ git clone https://github.com/Bharat2044/100xDevs-Cohort3-WebDev-and-Devops.git
 -   📖 [**Notes/Slides & Articles/Blogs Link**](./Week%2001%20-%20Orientation,%20HTML,CSS,Basic%20JS/1.1%20-%20Web%20Dev%20+%20Devops%20Orientation/1.1%20-%20Web%20Dev%20+%20Devops%20Orientation%20Notes.md)
 -   📝 [**Lecture Assignment**](./Week%2001%20-%20Orientation,%20HTML,CSS,Basic%20JS/1.1%20-%20Web%20Dev%20+%20Devops%20Orientation/1.1%20-%20Web%20Dev%20+%20Devops%20Orientation%20Assignment.md)
 -   🖥️ [**Assignment Solution**](./Week%2001%20-%20Orientation,%20HTML,CSS,Basic%20JS/1.1%20-%20Web%20Dev%20+%20Devops%20Orientation/Assignment%20Solution/)
-    -   [VS Code Landing Page Clone Live Link 🚀](https://vscode-clone-bharat.vercel.app/)
+    
 
 ### 💻 [**1.2 - Basics of JavaScript**](./Week%2001%20-%20Orientation,%20HTML,CSS,Basic%20JS/1.2%20-%20Basics%20of%20JavaScript/)
 
@@ -39,7 +37,7 @@ git clone https://github.com/Bharat2044/100xDevs-Cohort3-WebDev-and-Devops.git
 -   📖 [**Notes/Slides & Articles/Blogs Link**](./Week%2001%20-%20Orientation,%20HTML,CSS,Basic%20JS/1.2%20-%20Basics%20of%20JavaScript/1.2%20-%20Basics%20of%20JavaScript%20Notes.md)
 -   📝 [**Lecture Assignment**](./Week%2001%20-%20Orientation,%20HTML,CSS,Basic%20JS/1.2%20-%20Basics%20of%20JavaScript/1.2%20-%20Basics%20of%20JavaScript%20Assignment.md)
 -   🖥️ [**Assignment Solution**](./Week%2001%20-%20Orientation,%20HTML,CSS,Basic%20JS/1.2%20-%20Basics%20of%20JavaScript/Assignment%20Solution/)
-    -   [Zerodha Landing Page Clone Live Link 🚀](https://zerodha-clone-bharat.vercel.app/)
+  
 
 </details>
 
@@ -56,7 +54,7 @@ git clone https://github.com/Bharat2044/100xDevs-Cohort3-WebDev-and-Devops.git
 -   📖 [**Notes/Slides & Articles/Blogs Link**](./Cohort%202%20Warmup%20Videos/Cohort%202%20Warmup%20Videos%20Notes.md)
 -   📝 [**Lecture Assignment**](./Cohort%202%20Warmup%20Videos/Cohort%202%20Warmup%20Videos%20Assignment.md)
 -   👨‍💻 [**Assignment Solution**](./Cohort%202%20Warmup%20Videos/Assignment%20Solution/)
-    -   [Zerodha Landing Page Clone Live Link 🚀](https://zerodha-clone-bharat.vercel.app/)
+    
     -   [Portfolio Returns Calculator Live Link 🚀](https://compound-interest-calculator-psi.vercel.app/)
 
 </details>
@@ -101,7 +99,7 @@ git clone https://github.com/Bharat2044/100xDevs-Cohort3-WebDev-and-Devops.git
 -   📖 [**Notes/Slides & Articles/Blogs Link**](./Week%2002%20-%20Offline%20Videos/Week%2002%20-%20Offline%20Videos%20Notes.md)
 -   📝 [**Lecture Assignment**](./Week%2002%20-%20Offline%20Videos/Week%2002%20-%20Offline%20Videos%20Assignment.md)
 -   🖥️ [**Assignment Solution**](./Week%2002%20-%20Offline%20Videos/Assignment%20Solution/)
-    -   [Whole Page of VS Code Clone Live Link 🚀](https://vscode-clone-bharat.vercel.app/)
+  
 -   📒[**Cohort 3.0 - GitHub Assignment Repository Link**](https://github.com/100xdevs-cohort-3/assignments)
 
 </details>
@@ -119,7 +117,7 @@ git clone https://github.com/Bharat2044/100xDevs-Cohort3-WebDev-and-Devops.git
 -   📖 [**Notes/Slides & Articles/Blogs Link**](./Week%2003%20-%20DOM/3.1%20-%20DOM%20Simple/Week%2003%20-%20DOM%20Manipulation%20Notes.md)
 -   📝 [**Lecture Assignment**](./Week%2003%20-%20DOM/3.1%20-%20DOM%20Simple/Week%2003%20-%20DOM%20Manipulation%20Assignment.md)
 -   🖥️ [**Assignment Solution**](./Week%2003%20-%20DOM/3.1%20-%20DOM%20Simple/Assignment%20Solution/)
-    -   [Todo App using JavaScript Live Link 🚀](https://todo-list-bharat.vercel.app/)
+    
 
 ### 💻 [**3.2 - DOM Advance**](./Week%2003%20-%20DOM/3.2%20-%20DOM%20Advance/)
 
@@ -129,7 +127,7 @@ git clone https://github.com/Bharat2044/100xDevs-Cohort3-WebDev-and-Devops.git
 -   📖 [**Notes/Slides & Articles/Blogs Link**](./Week%2003%20-%20DOM/3.2%20-%20DOM%20Advance/3.2%20-%20DOM%20Advance%20Notes.md)
 -   📝 [**Lecture Assignment**](./Week%2003%20-%20DOM/3.2%20-%20DOM%20Advance/3.2%20-%20DOM%20Advance%20Assignment.md)
 -   🖥️ [**Assignment Solution**](./Week%2003%20-%20DOM/3.2%20-%20DOM%20Advance/Assignment%20Solution/)
-    -   [Todo App using ReactJS Live Link 🚀](https://todo-list2-bharat.vercel.app/)
+   
 
 </details>
 
@@ -489,8 +487,8 @@ git clone https://github.com/Bharat2044/100xDevs-Cohort3-WebDev-and-Devops.git
 
 # 🔗 **Let's Connect** 🤝
 
-[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/bharat__2044)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bharat2044/)
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/Piyus_rathore)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/piyushrathore--)
 <a href='https://medium.com/@Bharat2044' target="_blank"><img alt='Medium' src='https://img.shields.io/badge/Medium-100000?style=plastic&logo=Medium&logoColor=000000&labelColor=475AC7&color=475AC7'/></a>
-[![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/21453213/bharat2044)
-[![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discordapp.com/users/1202345957216231446)
+[![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/22387716/piyush)
+
