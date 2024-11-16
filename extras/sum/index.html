@@ -20,24 +20,13 @@
     <h2 id="result"></h2>
 
     <script>
-      async function add(event) {
-        event.preventDefault(); // Prevent form from submitting traditionally
-
-        const num1 = document.getElementById('num1').value;
-        const num2 = document.getElementById('num2').value;
-
-        try {
-          // Send request to backend
-          const response = await fetch(`http://localhost:3000/?num1=${num1}&num2=${num2}`);
-          const resultText = await response.text();
-          
-          // Display the result in the frontend
-          document.getElementById('result').innerHTML = resultText;
-        } catch (error) {
-          console.error('Error:', error);
-          document.getElementById('result').innerText = 'Error calculating sum';
-        }
-      }
+     function sendreq(){
+      axios.get("http://localhost:3000",{
+        a:document.getElementById("num1").value,
+        b:document.getElementById("num2").value
+        
+      })
+     }
     </script>
   </body>
 </html>
