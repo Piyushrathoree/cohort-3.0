@@ -4,23 +4,34 @@ const { auth, JWT_SECRET } = require("./auth");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+const z = require("zod");
 
 const app = express();
 app.use(express.json());
 
 app.post("/signup", async function (req, res) {
     try {
-        const { email, password, name } = req.body;
+        const User = z.object({
+            email: z.string().email(),
+            password: z
+                .string()
+                .min(8)
+                .regex(/^[a-zA-Z0-9@#$&]+$/, "Password must be alphanumeric"), // Regex to enforce alphanumeric
+            name: z.string(),
+        });
+
+        const validateData = User.parse(req.body);
+        if (validateData.error) {
+            return res.status(400).json(validateData.error.message);
+        }
+        const { email, password, name } = validateData;
+
         console.log(email, password, name);
 
-        if (!name || !email || !password) {
-            return res.status(400).json("all fields are necessary");
-        }
         const existingUser = await UserModel.findOne({
-            email: email,
-            password: password,
+            email,
         });
-        if (!existingUser) {
+        if (existingUser) {
             return res.status(400).json("User already exists");
         }
         const hashPassword = await bcrypt.hash(password, 10);
@@ -45,8 +56,15 @@ app.post("/signup", async function (req, res) {
 
 app.post("/signin", async function (req, res) {
     try {
-        const { email, password } = req.body;
-
+        const User = z.object({
+            email: z.string().email(),
+            password: z
+                .string()
+                .min(8)
+                .regex(/^[a-zA-Z0-9@#$&]+$/, "Password must be alphanumeric"), // Regex to enforce alphanumeric
+        });
+        const validateData = User.parse(req.body);
+        const { email, password } = validateData;
         // Validate input
         if (!email || !password) {
             return res
@@ -61,14 +79,14 @@ app.post("/signin", async function (req, res) {
         }
 
         // Compare password
-        const isPasswordValid =  bcrypt.compare(password, user.password);
+        const isPasswordValid = bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
             return res.status(403).json({ message: "Incorrect credentials" });
         }
 
         // Generate token
         const token = jwt.sign(
-            { id: user._id.toString() },
+            { email },
             JWT_SECRET,
             { expiresIn: "1h" } // Optional: Token expiration time
         );
@@ -89,12 +107,12 @@ app.post("/signin", async function (req, res) {
 
 app.post("/todo", auth, async function (req, res) {
     const userId = req.userId;
-   const { title , isCompleted } = req.body;
+    const { title, isCompleted } = req.body;
 
     await TodoModel.create({
         userId,
         title,
-        isCompleted
+        isCompleted,
     });
 
     res.json({
@@ -120,8 +138,10 @@ app.put("/todos/:id/done", auth, async function (req, res) {
         const { isCompleted } = req.body; // Extract the `isCompleted` field from the request body
 
         // Validate input
-        if (typeof isCompleted !== 'boolean') {
-            return res.status(400).json({ message: "isCompleted field is required" });
+        if (typeof isCompleted !== "boolean") {
+            return res
+                .status(400)
+                .json({ message: "isCompleted field is required" });
         }
 
         // Update the todo item
@@ -139,25 +159,24 @@ app.put("/todos/:id/done", auth, async function (req, res) {
         // Send the response
         res.json({
             message: "Todo updated",
-            todo
+            todo,
         });
     } catch (error) {
         // Handle errors
         res.status(500).json({
             message: "Something went wrong",
-            error: error.message
+            error: error.message,
         });
     }
 });
 
-app.delete('/todos/:id', async (req, res) => {
+app.delete("/todos/:id", async (req, res) => {
     try {
         const { id } = req.params; // Extract ID from URL params
 
-        if(!id){
-            res.status(404).json({message:"id not received"})
+        if (!id) {
+            res.status(404).json({ message: "id not received" });
         }
-        
 
         // Find and delete the Todo
         const deletedTodo = await TodoModel.findByIdAndDelete(id);
@@ -178,6 +197,5 @@ app.delete('/todos/:id', async (req, res) => {
         });
     }
 });
-
 
 app.listen(3000);
