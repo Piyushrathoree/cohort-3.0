@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios"; // Make sure axios is imported
+import Navbar from "./components/Navbar.jsx";
+
 
 function App() {
     const [todos, setTodos] = useState([]);
@@ -19,21 +21,12 @@ function App() {
 
     return (
         <>
-            <div className="flex flex-col gap-5 w-screen h-screen items-center justify-center  bg-[#242424] text-white">
-                <div className="w-1/6 h-2/4  bg-gray-700 flex flex-col  gap-5  items-center">
-                    <h1 className="text-3xl ">Todos</h1>
-                    <ul>
-                        {todos.map((todo) => (
-                            <div>
-                                <li className="text-2xl" key={todo.id}>{todo.title}</li>
-                                <li>{todo.description}</li>
-                            </div>
-                        ))}
-                    </ul>
-                </div>
+            <div className="h-screen w-screen flex  bg-[#242424] ">
+                <Navbar></Navbar>
             </div>
         </>
     );
 }
+
 
 export default App;
