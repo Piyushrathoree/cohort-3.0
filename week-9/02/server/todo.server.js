@@ -58,6 +58,7 @@ app.post('/todos', (req, res) => {
     id: Math.floor(Math.random() * 1000000), // unique random id
     title: req.body.title,
     description: req.body.description,
+    done: false
   };
 
   fs.readFile('todos.json', 'utf8', (err, data) => {
@@ -85,17 +86,12 @@ app.put('/todos/:id', (req, res) => {
     if (todoIndex === -1) {
       res.status(404).send();
     } else {
-      const updatedTodo = {
-        id: todos[todoIndex].id,
-        title: req.body.title,
-        description: req.body.description,
-      };
-
-      todos[todoIndex] = updatedTodo;
+        todos[todoIndex].done = !todos[todoIndex].done
+     
 
       fs.writeFile('todos.json', JSON.stringify(todos), (err) => {
         if (err) throw err;
-        res.status(200).json(updatedTodo);
+        res.status(200).json("Todo updated successfully");
       });
     }
   });
