@@ -26,7 +26,7 @@ function App() {
     }, [todos]);
 
     return (
-        <div className="    min-h-screen flex flex-col bg-gray-900">
+        <div className="min-h-screen flex flex-col bg-gray-900">
             <Navbar />
             <Create refreshTodos={fetchTodos} />
             <div
