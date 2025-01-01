@@ -17,7 +17,7 @@ function App() {
     // })
     //here i can also use useMemo hook for performance optimization and remove the extra re render 
     // all i need is to save a loop in the usemem hook with a variable and the i can use the variable it self instead of the function and the third usestate variable
-
+    // memo is also used to save the value of the variable and only re render when the value of the variable/dependency  is changed
     let count =useMemo(()=>{
         let sum = 0;
         for (let i = 1; i <= num; i++) {
@@ -25,6 +25,8 @@ function App() {
         }
         return sum;
     },[num])
+
+    
    
     return (
         <>
