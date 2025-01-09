@@ -1,7 +1,7 @@
 import InputBox from "./InputBox";
 import { useState } from "react";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
-import { set } from "zod";
+
 
 function App() {
     const [amount, setAmount] = useState();
