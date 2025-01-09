@@ -1,6 +1,7 @@
 import InputBox from "./InputBox";
 import { useState } from "react";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
+import { z } from "zod";
 
 
 function App() {
