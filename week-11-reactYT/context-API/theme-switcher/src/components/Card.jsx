@@ -12,7 +12,7 @@ export default function Card() {
                 </a>
                 <div className="flex items-center mt-2.5 mb-5">
                     <svg
-                        className="w-4 h-4 text-yellow-300 mr-1"
+                        className="w-4 h-4 text-yellow-300 mr-1"    
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
