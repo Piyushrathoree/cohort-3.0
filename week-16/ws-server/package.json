@@ -1,0 +1,22 @@
+{
+    "name": "ws-server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "concurrently \"tsc --watch\" \"nodemon dist/index.js --watch dist\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "dependencies": {
+        "@types/ws": "^8.18.1",
+        "typescript": "^5.8.3",
+        "ws": "^8.18.2"
+    },
+    "devDependencies": {
+        "concurrently": "^9.1.2",
+        "nodemon": "^3.1.10"
+    }
+}
