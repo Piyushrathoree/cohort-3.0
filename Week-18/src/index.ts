@@ -1,13 +1,18 @@
-import { createServer } from "https";
+import { PrismaClient } from "./generated/prisma";
 
-const server = createServer((req, res) => {
-  res.writeHead(200);
-  res.end("Hello, world!");
-});
+const prisma = new PrismaClient();
 
-server.listen(8000, () => {
-  console.log("Server is listening on port 8000");
-});
+const getUser = async () => {
+  const res = await prisma.users.findFirst({
+    where:{
+      id:1
+    },
+    include:{
+      todos:true
+    }
+  })
 
+  console.log(res);
+}
 
-  
+getUser()
