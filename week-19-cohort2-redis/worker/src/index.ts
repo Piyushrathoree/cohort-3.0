@@ -4,7 +4,6 @@ const client = createClient()
 
 
 async function startWorker() {
-
     try {
         await client.connect();
         console.log("Worker connected to Redis.");
@@ -24,5 +23,4 @@ async function startWorker() {
         console.error("Failed to connect to Redis", error);
     }
 }
-
 startWorker()
