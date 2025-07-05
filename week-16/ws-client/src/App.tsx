@@ -1,34 +1,43 @@
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 function App() {
-    const [socket, setSocket] = useState(null);
-    const inputRef = useRef<HTMLInputElement>(null);
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        if (!socket) {
-            return;
-        }
-        //@ts-ignore
-        socket.send(inputRef.current?.value || "");
-        inputRef.current!.value = "";
+    const [socket, setSocket] = useState<WebSocket | null>(null);
+    const [message, setMessage] = useState("");
+    const [messages, setMessages] = useState<string[]>([]);
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault();
+        socket?.send(message);
+        setMessage("");
     };
-
     useEffect(() => {
-        const ws = new WebSocket("ws://localhost:8080");
-        setSocket(ws);
-        ws.onmessage = (e) => {
-            if (e.data === "pong") {
-                alert("pong received");
-            }
+        const socket = new WebSocket("ws://localhost:8080");
+        setSocket(socket);
+        socket.onmessage = (event) => {
+            setMessages((prev) => [...prev, event.data]);
+        };
+        return () => {
+            socket.close();
         };
     }, []);
-
     return (
+            
         <>
             <div>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" ref={inputRef} />
+                    <input
+                        type="text"
+                        onChange={(e) => setMessage(e.target.value)}
+                        value={message}
+                    />
                     <button type="submit">Send</button>
                 </form>
+                <div>
+                    <h3>Messages:</h3>
+                    <ul>
+                        {messages.map((msg, idx) => (
+                            <li key={idx}>{msg}</li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </>
     );
